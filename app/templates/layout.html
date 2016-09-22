@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebExperts: CMS Made Simple</title>
+
+    <!--Links-->
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap-theme.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/app.css')}}">
+
+    <!--Scipts-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
+    <script src="{{url_for('.static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="glyphicon menu-hamburger"></span>>
+            </button>
+            <a class="navbar-brand" href="#">WebExperts</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                {% block navbarleft %} {% endblock %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> SIGNUP</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        {% block content %} {% endblock %}
+    </section>
+    <footer>
+        <div></div>
+    </footer>
+
+</body>
+</html>

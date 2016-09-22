@@ -1,0 +1,31 @@
+@import 'https://fonts.googleapis.com/css?family=Pattaya';
+body{
+    height:100%;
+    width:100%;
+    padding:0;margin:0;
+}
+header{
+  height:60px;
+}
+.navbar{
+  background:#795548;
+}
+.navbar-default .navbar-header > a{
+  color: #fff;
+  font-family: 'Pattaya', cursive;
+  font-size:32px;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #fff;
+}
+section{
+  height:533px;
+}
+footer{
+  margin:0.5px;
+  height:60px;
+  background:#795548;
+}
