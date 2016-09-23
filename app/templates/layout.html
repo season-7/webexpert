@@ -7,6 +7,7 @@
     <!--Links-->
     <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url_for('.static', filename='css/bootstrap-theme.min.css')}}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('.static', filename='css/app.css')}}">
 
     <!--Scipts-->
@@ -41,7 +42,13 @@
         {% block content %} {% endblock %}
     </section>
     <footer>
-        <div></div>
+        <div class="col-sm-4">©Copyright 2016</div>
+        <div class="col-sm-8">
+            <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	        <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	        <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	        <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+        </div>
     </footer>
 
 </body>
