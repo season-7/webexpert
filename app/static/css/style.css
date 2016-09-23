@@ -1,0 +1,45 @@
+body{
+    width:100%;
+    padding:0;margin:0;
+    overflow: hidden;
+}
+.wrapper{
+    width:100%;
+}
+header{
+    padding:0;margin:0;
+    color:#fff;
+    background-color: #607D8B
+}
+.navigation{
+    background-color: #607D8B;
+    color: #fff;
+}
+.navigation span{
+    display:block;
+}
+
+@media only screen and (min-width: 780px){
+    header{
+        height:60px;
+    }
+    .heading{
+        padding-left:10px;
+    }
+    section{
+        height:520px;
+        border: 0.5px solid black;
+    }
+    .navigation{
+        height:520px;
+        padding:20px;
+    }
+    .navigation span{
+        font-size:24px;
+        line-height: 300%;
+    }
+     footer{
+        height:60px;
+    }
+
+}
