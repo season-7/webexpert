@@ -1,0 +1,12 @@
+.topbar{
+    background-color: rgba(0, 77, 64, 0.7);
+    padding:2vh;
+    color:#fff;
+}
+.topbar ul,li{
+    display:inline;
+    padding:2vh;
+}
+.topbar a{
+    color:#fff;
+}

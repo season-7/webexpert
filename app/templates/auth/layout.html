@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community App</title>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body>
+
+    <header> <!--site title + site navigation + specialised welcome message-->
+       {% block header %}
+        <div>{% block heading %}{% endblock %}</div>
+        <div>{% block navigation %}{% endblock %}</div>
+        <div>{% block username %}{% endblock %}</div>
+       {% endblock %}
+    </header>
+
+    <section><!--Main Content -->
+        {% block content %}
+        {% endblock %}
+    </section>
+
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>

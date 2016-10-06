@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+    {% block navbar %}
+<div class="nav-tabs">
+        <a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home">&nbsp;Dashboard</span></a>
+        <a data-toggle="tab" href="#user"><span class="glyphicon glyphicon-user">&nbsp;UserProfile</span></a>
+        <a data-toggle="tab" href="#pages"><span class="glyphicon glyphicon-file">&nbsp;Pages</span></a>
+        <a data-toggle="tab" href="#blogs"><span class="glyphicon glyphicon-edit">&nbsp;Blogs</span></a>
+        <a data-toggle="tab" href="#help"><span class="glyphicon glyphicon-exclamation-sign">&nbsp;Help</span></a>
+</div>
+    {% endblock %}
+    {% block content %}
+<div class="tab-content">
+    <div id="home" class="text-center tab-pane fade in active">
+        <h2>Dashboard</h2>
+    </div>
+    <div id="user" class="text-center tab-pane fade">
+        <h2>User Profile</h2>
+    </div>
+    <div id="pages" class="text-center tab-pane fade">
+        <h2>Pages</h2>
+    </div>
+    <div id="blogs" class="text-center tab-pane fade">
+        <h2>Blogs</h2>
+        {% block new_blog %}{% endblock %}
+    </div>
+    <div id="help" class="text-center tab-pane fade">
+        <h2>Help</h2>
+    </div>
+</div>
+    {% endblock %}
