@@ -1,3 +1,14 @@
+
+/*Homepage*/
+.fullpage{
+    min-height:100vh;
+    max-height:100vh;
+    overflow:hidden;
+    background-color: rgba(0, 77, 64, 0.7);
+    color:#fff;
+}
+
+/*Dashboard Page*/
 .topbar{
     background-color: rgba(0, 77, 64, 0.7);
     padding:2vh;
@@ -8,5 +19,6 @@
     padding:2vh;
 }
 .topbar a{
+    text-decorator:none;
     color:#fff;
 }
