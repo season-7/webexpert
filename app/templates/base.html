@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="page-wrapper">
-        {% block page %} {% endblock %}
+        {% block fullpage %}
 
         <div>
             {% block topbar %}{% endblock %}
@@ -34,6 +34,7 @@
             {% block footer %}{% endblock %}
         </div>
 
+        {% endblock %}
     </div>
 </body>
 </html>

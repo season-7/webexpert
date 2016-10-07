@@ -22,6 +22,7 @@ def signup():
         user = User(name,email, password)
         db.session.add(user)
         db.session.commit()
+        session['logged_in'] = True
         flash('User Registration Successful. Login')
         return redirect(url_for('auth.signin'))
     return render_template('auth/signup.html')
@@ -46,5 +47,5 @@ def signin():
 
 @auth.route('/logout/', methods=['GET', 'POST'])
 def signout():
-    session.clear()
+    session.pop('logged_in', None)
     return redirect(url_for('auth.signin'))
