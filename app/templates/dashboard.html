@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block topbar %}
+<div class="container-fluid">
+    <div class="row topbar">
+        <div class="col-sm-8">
+            <p class="title">&nbsp;WebExperts CMS</p>
+        </div>
+        <div class="col-sm-4 text-right" >
+            <ul>
+                <li><span class="glyphicon glyphicon-log-out"><a href="{{ url_for('auth.signout') }}">&nbsp;SignOut</a></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block tabs %}
+<div class="container-fluid">
+    <div class="row tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home"><span class="glyphicon glyphicon-home">&nbsp;Dashboard</span></a></li>
+            <li><a data-toggle="tab" href="#user"><span class="glyphicon glyphicon-user">&nbsp;User Profile</span></a></li>
+            <li><a data-toggle="tab" href="#add_blog"><span class="glyphicon glyphicon-edit">&nbsp;Add Blog</span></a></li>
+            <li><a data-toggle="tab" href="#pages"><span class="glyphicon glyphicon-wheel">&nbsp;Settings</span></a></li>
+            <li><a data-toggle="tab" href="#help"><span class="glyphicon glyphicon-exclamation-sign">&nbsp;Help</span></a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block tab_content %}
+<div class="row content">
+    <div class="tab-content">
+        <div id="home" class="text-center tab-pane fade in active">
+            <h2>Dashboard</h2>
+            <div class="container text-left">
+                <h3>Your Blogs</h3>
+                {% if session.logged_in %}
+                <ul class="entries" >
+                    {% for entry in entries %}
+                    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li><em>Unbelievable.  No entries here so far</em></li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div id="user" class="text-center tab-pane fade">
+            <h2>User Profile</h2>
+        </div>
+        <div id="pages" class="text-center tab-pane fade">
+            <h2>Settings</h2>
+        </div>
+        <div id="add_blog" class="text-center tab-pane fade">
+            <h2>Add Blog</h2>
+            <div class="container text-center">
+            {% if session.logged_in %}
+                <p>Create New Blog</p>
+                <form action="{{ url_for('dashboard') }}" method="post" class="add-entry">
+                    <dl>
+                        <dt>Title:
+                        <dd><input type="text" size="30" name="title">
+                        <dt>Text:
+                        <dd><textarea name="text" rows="5" cols="40"></textarea>
+                        <dd><input type="submit" value="Share">
+                    </dl>
+                </form>
+            {% else %}
+            <em>Adding a blog requires you to be logged in</em>
+            {% endif %}
+            </div>
+        </div>
+        <div id="help" class="text-center tab-pane fade">
+            <h2>Help</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</div>

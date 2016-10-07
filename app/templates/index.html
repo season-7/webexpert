@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block fullpage %}
+
+    <div class="fullpage container-fluid">
+        <div class="row buttons">
+            <div class="col-sm-12 text-right">
+                <form action="{{ url_for('auth.signin') }}">
+                    <input type="submit" class="btn btn-info" value="SignIn" />
+                </form>
+                <form action="{{ url_for('auth.signup') }}">
+                    <input type="submit" class="btn btn-info" value="SignUp" />
+                </form>
+            </div>
+        </div>
+        <div class="row maintop">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h1>WebExpert: CMS made easy</h1>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
