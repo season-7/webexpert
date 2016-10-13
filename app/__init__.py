@@ -2,9 +2,10 @@ import os
 import sqlite3
 from flask import Flask, render_template,g,session,url_for,abort,flash,redirect,request
 from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
 
-#app.config.from_object('config')
+app.config.from_object('config')
 
 db = SQLAlchemy(app)
 
@@ -43,7 +44,7 @@ def dashboard():
                    [request.form['title'], request.form['text']])
         db.commit()
         flash('New entry was successfully posted')
-        return redirect(url_for('show_entries'))
+        return redirect(url_for('dashboard'))
 
     elif request.method == 'GET':
         db = get_db()
