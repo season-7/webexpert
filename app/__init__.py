@@ -2,10 +2,9 @@ import os
 import sqlite3
 from flask import Flask, render_template,g,session,url_for,abort,flash,redirect,request
 from flask_sqlalchemy import SQLAlchemy
-
 app = Flask(__name__)
 
-app.config.from_object('config_app')
+#app.config.from_object('config')
 
 db = SQLAlchemy(app)
 
@@ -53,7 +52,7 @@ def dashboard():
         return render_template('dashboard.html', entries=entries)
     return render_template('dashboard.html')
 
-"""""
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
@@ -61,5 +60,4 @@ def not_found(error):
 from app.auth.controllers import auth as auth_module
 
 app.register_blueprint(auth_module)
-"""""
 db.create_all()
