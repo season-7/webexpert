@@ -1,6 +1,3 @@
-# WebExpert
-A Python-Flask based CMS that allows anyone to create a website easily
-=======
-# webexpert
+#Webexpert
 A Python-Flask based CMS that allows anyone to create a page and have blogs populated on the page.
 
